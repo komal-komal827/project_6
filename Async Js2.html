@@ -1,0 +1,130 @@
+<script type="text/javascript">
+/*	
+// 3 steps :
+
+	let xhr = new XMLHttpRequest();
+
+	xhr.open("GET","https://dummyjson.com/posts")
+
+	xhr.send()
+
+	// console.log(xhr)
+
+	xhr.addEventListener('readystatechange',()=>{
+		if(xhr.readyState === 4 && xhr.status === 200 )
+		{
+			 //console.log(xhr.responseText)  //data in string
+			// console.log(JSON.parse(xhr.responseText))  
+			let response = JSON.parse(xhr.responseText)  //convert into object(posts)
+			// console.log(response)
+			let data = response.posts  //posts has array - data
+			console.log(data.title)  //undefined - we need to use loop
+			
+			data.forEach((object)=>{
+				console.log(object.title)
+			})			
+		}
+	})
+
+*/
+
+
+// --------------------
+
+// Call back function
+// Use Json 
+// Callback hell
+
+/*
+	let task =(callback)=>{
+
+
+	let xhr = new XMLHttpRequest();
+
+	xhr.open("GET","https://dummyjson.com/pts")
+
+	xhr.send()
+
+	// console.log(xhr)
+
+	xhr.addEventListener('readystatechange',()=>{
+		if(xhr.readyState === 4 && xhr.status === 200 )
+		{
+			let response = JSON.parse(xhr.responseText)  //convert into object(posts)
+			let data = response.posts  //posts has array - data
+			// console.log(data)  //
+
+			callback(undefined,data)
+			
+		}
+		else
+		{
+			callback("Data not load",undefined)
+		}
+	})
+
+	}
+
+	
+//callback hell
+	task((error,data)=>{
+		// console.log('Call back function')
+
+		if(error)
+		{
+			console.log(error)
+		}
+		else
+		{
+			console.log(data)
+		}
+
+	task((error,data)=>{
+		// console.log('Call back function')
+
+		if(error)
+		{
+			console.log(error)
+		}
+		else
+		{
+			console.log(data)
+		}
+	})
+})
+
+*/
+
+
+	let xhr = new XMLHttpRequest();
+
+	xhr.open("GET","1st.json")
+
+	xhr.send()
+
+	// console.log(xhr)
+
+	xhr.addEventListener('readystatechange',()=>{
+		if(xhr.readyState === 4 && xhr.status === 200 )
+		{
+			 //console.log(xhr.responseText)  //data in string
+			// console.log(JSON.parse(xhr.responseText))  
+			let response = JSON.parse(xhr.responseText)  //convert into object(posts)
+			// console.log(response)
+			let data = response.posts  //posts has array - data
+			console.log(data.title)  //undefined - we need to use loop
+			
+			data.forEach((object)=>{
+				console.log(object.title)
+			})			
+		}
+	})
+
+
+
+
+
+
+
+
+</script>

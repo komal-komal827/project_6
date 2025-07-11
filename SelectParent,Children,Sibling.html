@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		let demo = ()=>{
+		let div1 = document.getElementById('div1')
+			 console.log(div1.children)
+			 //let c = div1.children
+			//console.log(c)
+			    let k= div1.children.subdiv2.previousElementSibling
+			    console.log(k)
+
+			s=div1.children.subdiv3.previousElementSibling
+			console.log(s)
+
+			 v=div1.children.subdiv2.parentElement
+			 console.log(v)
+		}
+	</script>
+</head>
+<body onload="demo()"> 
+
+
+<div id="div1">
+	<div id="subdiv1"></div>
+	<div id="subdiv2"></div>
+	<div id="subdiv3"></div>
+</div>
+
+
+
+</body>
+</html>

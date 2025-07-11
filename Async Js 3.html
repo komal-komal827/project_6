@@ -1,0 +1,43 @@
+<script type="text/javascript">
+	/*
+
+let demo = ()=>{
+	return new Promise((resolved,reject)=>{
+		// resolved("Promise Resolved")
+		reject("Promise Rejected")
+	})
+}
+
+
+demo().then((data)=>{
+	console.log("then" +data)
+}).catch((error)=>{
+	console.log("error" + error)
+})
+
+*/
+
+
+// fetch().then(json).then(data)
+
+	fetch('https://dummyjson.com/products')
+	.then((res)=>res.json())
+	// .then((data)=> console.log(data))
+	.then((data)=>{
+		console.log(data) //return object - products
+		let data2 = data.products
+		// console.log(data2)
+
+		data2.forEach((p)=>{
+			console.log(p.title)
+		})  //forEach
+
+
+
+	})  //then
+
+
+
+
+
+</script>

@@ -1,0 +1,264 @@
+<!-- ES6 - 10
+
+ARRAY DESTRUCTURING
+OBJECT DESTRUCTURING
+SPREAD OPERATOR
+REST OPERATOR
+SHORT CIRCUITING
+NULLISH COALESCING OPERATOR
+FOR OF LOOP
+Advance Object Literals
+SET 
+MAPS 
+-->
+
+<script type="text/javascript">
+	// Array des
+/*
+	let ar = [10,20,30,40]
+
+
+	let [a,b,c,d] = ar
+
+	console.log(b)
+
+
+	let ar = [10,20,30,40,[100,200]]
+
+
+	let [a,b,c,d,e] = ar
+
+	console.log(e[1])
+
+
+
+// Object Destructuring
+
+let stud = {
+	name:'Aarush',
+	age:8,
+	city:'Rahta'
+}
+
+// console.log(stud.name)
+
+let {name,age,city} = stud
+
+console.log(name)
+
+
+
+let stud = {
+	name:'Aarush',
+	age:8,
+	city:'Rahta',
+	subjects:['C','C++','Java']
+}
+
+// console.log(stud.name)
+
+let {name,age,city,subjects} = stud
+
+console.log(subjects[1])
+
+
+
+// SPREAD OPERATOR
+
+let a1 =[10,20]
+let a2 =['Aarush','Kabir']
+
+// let a3 = a1 + a2  // it will convert array into string
+
+let a3= [...a1 , ...a2]
+//to combine arrays
+
+console.log(a3)
+
+//--------------------------
+
+let a1 =[10,20,30]
+
+let a2 = a1 
+
+// let a2= [...a1] //clone - if a1 modifed in future it will not affect to a2
+
+console.log(a1)
+console.log(a2)
+
+a1[1] ='Aarush'
+
+console.log(a1)
+console.log(a2)
+//------------------------------
+
+// Rest operator
+
+
+
+	let ar = [10,20,30,40,50]
+
+	let [a,b,...ar2] = ar
+
+	console.log(a,b,ar2)
+*/
+
+
+
+
+
+
+// Short Circuting -  && ||
+
+// falsy - null,undefined,false ,0 
+
+//let name = "Aarush" && "Kabir" && true && undefined && "COdinwale"
+//console.log(name)
+
+
+ //let name = null || "Aarush" || "Kabir"
+//console.log(name)
+
+
+
+// NULLISH COALESCING OPERATOR - ??
+	// null , undefined
+
+
+
+//let name = "Kabir" 
+// let name= undefined
+
+//let name2 =  name ?? "Aarush"
+//console.log(name2)
+
+//--------------------------
+
+/*let stud = {
+	name:"Aarush",
+	age:8,
+	city:"Rahta"
+}
+console.log(stud)
+
+// Object.keys(stud)
+// Object.values(stud)
+// Object.entries(stud)
+
+for (x of Object.values(stud))
+{
+	console.log(x)
+}*/
+
+// ---------------------------
+
+/*// Advance Object Literals (Values)
+let access = {
+	bag:true,
+	charger:true,
+	mouse:true
+}
+
+
+const laptop ={
+	brand:"Dell",
+	model:"G5080",
+	processor:"intel",
+	ram:32,
+	sdd:"1tb",
+	access,
+	show()
+	{
+		console.log('Helllo')
+	}
+
+	
+	/*show:function()
+	{
+		console.log('Hello')
+	}*/
+	
+//}
+//console.log(laptop)
+//laptop.show()
+//console.log(laptop.access)*/
+
+//----------------------------------------
+
+// MAP 
+
+//let fruits = new Map([key:values])
+
+/*let fruits = new Map([
+['Watermelon',80],
+['Apple',100],
+['greeps',40],
+])
+
+
+//fruits.set("Banana",40)
+
+//console.log(fruits)
+
+//let rate = fruits.get("Apple")
+//console.log(rate)
+
+//console.log(fruits.size)
+//fruits.delete('Apple')
+//console.log(fruits)
+
+ //fruits.clear()
+ //console.log(fruits)
+
+ //console.log(fruits.has('Banana'))
+
+
+//fruits.forEach((value,key)=>{
+	//console.log(key,value)
+//})
+
+
+
+
+// for (x of fruits.keys())
+//for (x of fruits.entries())
+//{
+//	console.log(x)
+//}*/
+
+
+
+
+
+
+// SET - collection of Unique values
+
+//let ar = [10,20,30,10]
+//console.log(ar)
+
+let s = new Set( [10,20,30,10] )
+console.log(s)
+
+ //let x = Array.from('Codingwale')
+ //console.log(x)
+
+//let x = Array.from(s)
+ //console.log(x)
+
+for (x of s)
+{
+	console.log(x)
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

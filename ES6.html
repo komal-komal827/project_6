@@ -1,0 +1,104 @@
+<!-- ES6 - 10
+
+ARRAY DESTRUCTURING
+OBJECT DESTRUCTURING
+SPREAD OPERATOR
+REST OPERATOR
+SHORT CIRCUITING
+NULLISH COALESCING OPERATOR
+FOR OF LOOP
+SET 
+MAPS -->
+
+<script type="text/javascript">
+	// Array des
+
+	//let ar = [10,20,30,40]
+
+
+	//let [a,b,c,d] = ar
+
+	//console.log(b)
+
+
+	//let ar = [10,20,30,40,[100,200]]
+
+
+	//let [a,b,c,d,e] = ar
+
+	//console.log(e[1])
+
+
+/*// Object Destructuring
+
+let stud = {
+	name:'Aarush',
+	age:8,
+	city:'Rahta'
+}
+
+// console.log(stud.name)*/
+
+//let {name,age,city} = stud
+//console.log(name)
+
+
+
+
+/*let stud = {
+	name:'Aarush',
+	age:8,
+	city:'Rahta',
+	subjects:['C','C++','Java']
+}
+
+ console.log(stud.name)
+
+let {name,age,city,subjects} = stud
+
+console.log(subjects[1])*/
+
+
+
+// SPREAD OPERATOR
+
+/*let a1 =[10,20]
+let a2 =['Aarush','Kabir']
+
+// let a3 = a1 + a2  // it will convert array into string
+
+let a3= [...a1 , ...a2]
+//to combine arrays
+
+console.log(a3)*/
+
+//--------------------------
+
+/*let a1 =[10,20,30]
+
+let a2 = a1 
+
+// let a2= [...a1] //clone - if a1 modifed in future it will not affect to a2
+
+console.log(a1)
+console.log(a2)
+
+a1[1] ='Aarush'
+
+console.log(a1)
+console.log(a2)
+//------------------------------
+
+// Rest operator*/
+
+
+
+	let ar = [10,20,30,40,50]
+
+	let [a,b,...ar2] = ar
+
+	console.log(a,b,ar2)
+
+
+
+</script>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function save()
+		{
+			// step 1
+			//all variable values come from textboxes
+			let name = document.getElementById('txt_name').value
+			let age = document.getElementById('txt_age').value
+			let city = document.getElementById('txt_city').value
+
+			//step 2 - are they empty ?
+			if(name == "" || age == "" || city == "")
+			{
+				alert('Donot leave empty')
+			}
+			else
+			{
+				//step 3
+				let new_stud = {name,age,city}
+				//here we create object with textboxes values
+
+				// console.log(new_stud)
+				// step 4
+				let students_string = localStorage.getItem('students')
+				// step 5
+				let students = students_string ? JSON.parse(students_string) : []
+
+				// let students = JSON.parse(localStorage.getItem('students'))
+				//above line -  students come in string , using JSON.parse we convert it in array. (array has methods)
+
+				// step 6 - step 3 object step 5 array
+				students.push(new_stud) //here we push new_stud to students array
+
+				// console.log(students)
+				// step 7
+				localStorage.setItem('students',JSON.stringify(students))
+				//then again convert in string and send to localStorage
+
+				alert('Data saved')
+				// step 8
+				document.getElementById('txt_name').value = '';
+				document.getElementById('txt_age').value = '';
+				document.getElementById('txt_city').value = '';
+
+				read();
+	
+			}
+
+			
+
+		}
+
+		function read()
+		{
+				// step 2
+				let students_string = localStorage.getItem('students')
+
+				let students = students_string ? JSON.parse(students_string) : []
+					
+
+				let rows = ``;
+
+				students.forEach((s,index)=>{
+					// console.log(s)/
+					rows += `
+
+						<tr>
+							<td>${index+1}</td>
+							<td>${s.name}</td>
+							<td>${s.age}</td>
+							<td>${s.city}</td>
+							<td>
+								<button onclick='del(${index})'>Del</button>
+								<button onclick='fetch(${index})'>Edit</button>
+							</td>
+						</tr>
+					`;
+					
+				})
+
+				document.getElementById('result').innerHTML = rows;
+	}
+
+	function fetch(i)
+	{
+			let students_string = localStorage.getItem('students')
+
+			let students = students_string ? JSON.parse(students_string) : []
+
+			let stud = students.find((s,index)=> index == i )
+			// console.log(stud)
+
+			document.getElementById('txt_id').value = i
+			document.getElementById('txt_name').value = stud.name
+			document.getElementById('txt_age').value = stud.age
+			document.getElementById('txt_city').value = stud.city
+	}
+
+	function update()
+	{
+
+			let id = document.getElementById('txt_id').value
+			let name =document.getElementById('txt_name').value
+			let age = document.getElementById('txt_age').value
+			let city = document.getElementById('txt_city').value
+			// console.log({id,name,age,city})
+			let students_string = localStorage.getItem('students')
+
+			let students = students_string ? JSON.parse(students_string) : []
+
+			students.map((s , index)=>{
+				if(id == index)
+				{
+					s.name = name;
+					s.age = age;
+					s.city = city;
+
+				}
+			})
+
+			if(name == "" || age== "" || city =="" )
+			{
+				alert('Do not leave empty')
+			}
+			else
+			{
+				// console.log(students)
+				localStorage.setItem('students',JSON.stringify(students))
+				alert('Data updated')
+				clearf()
+				read()
+	
+			}
+			
+
+	}
+
+	function del(index)
+	{
+		// alert(index)
+			let students_string = localStorage.getItem('students')
+
+			let students = students_string ? JSON.parse(students_string) : []
+
+			students.splice(index,1)
+
+
+			localStorage.setItem('students',JSON.stringify(students))
+
+			alert('Data deleted')
+
+			read()				
+
+	}
+
+
+	function clearf()
+	{
+				document.getElementById('txt_id').value = '';
+		
+				document.getElementById('txt_name').value = '';
+				document.getElementById('txt_age').value = '';
+				document.getElementById('txt_city').value = '';
+
+	}
+	</script>
+</head>
+<body onload="read()">
+
+	<!-- 8.44 -->
+
+	ID : <input type="text" name="" id="txt_id" required>
+	<br><br>
+	
+	Name : <input type="text" name="" id="txt_name" required>
+	<br><br>
+	Age : <input type="number" name="" id="txt_age" required>
+	<br><br>
+	City : <input type="text" name="" id="txt_city" required>
+	<br><br>
+
+
+	<button onclick="save()">Save</button>
+	<button onclick="clearf()">Clear</button>
+	<button onclick="update()">Update</button>
+	<br><br>
+
+	<table border="1" width="100%">
+		<tr>
+			<th>Srno</th> <th>Name</th> <th>Age</th> <th>City</th> <th>Options</th>
+		</tr>
+		<tbody id="result">
+			<!-- step 1 -->
+		</tbody>
+	</table>
+
+
+
+</body>
+</html>

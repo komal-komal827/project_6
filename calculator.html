@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+
+    
+	<style type="text/css">
+		.main_div{
+			height:650px;
+			width: 450px;
+			border:2px solid black;
+			background-color: darkgray;
+            }
+
+		#div1{
+			height:100px;
+			width:400px;
+			border: 2px solid black;
+			margin-top:25px;
+			background-color:teal;
+			font-size:30px ;
+			text-align: right;
+
+		}
+		.div2{
+			height: 75px;
+			width:80px;
+			border: 2px solid black;
+			margin:10px;
+		
+		}
+		.div2:hover{
+			background-color: lightblue;
+		}
+
+
+
+		
+		
+
+	</style>
+
+
+</head>
+<body>
+<center>
+
+	<div class="main_div">
+    <input type="text" id="div1" disabled>
+<div class="row">
+<button class="col-md-3 col-6 div2" onclick="clearDisplay()"><h4>AC</h4></button>
+<button class="col-md-3 col-6 div2" onclick="Value('X')"><h4>X</h4></button>
+<button class="col-md-3 col-6 div2" onclick="Value('+/-')"><h4>+/-</h4></button>
+<button class="col-md-3 col-6 div2" onclick="Value('/')"><h4>/</h4></button>
+<br>
+
+
+<button class="col-md-3 col-6 div2"onclick="Value('7')"><h4>7</h4></button>
+<button class="col-md-3 col-6 div2"onclick="Value('8')"><h4>8</h4></button>
+<button class="col-md-3 col-6 div2"onclick="Value('9')"><h4>9</h4></button>
+<button class="col-md-3 col-6 div2"onclick="Value('*')"><h4>*</h4></button>
+<br>
+
+<button class="col-md-3 col-6 div2"onclick="Value('4')"><h4>4</h4></button>
+<button class="col-md-3 col-6 div2"onclick="Value('5')"><h4>5</h4></button>
+<button class="col-md-3 col-6 div2"onclick="Value('6')"><h4>6</h4></button>
+<button class="col-md-3 col-6 div2"onclick="Value('-')"><h4>-</h4></button>
+<br>
+
+<button class="col-md-3 col-6 div2"onclick="Value('1')"><h4>1</h4></button>
+<button class="col-md-3 col-6 div2"onclick="Value('2')"><h4>2</h4></button>
+<button class="col-md-3 col-6 div2"onclick="Value('3')"><h4>3</h4></button>
+<button class="col-md-3 col-6 div2"onclick="Value('+')"><h4>+</h4></button>
+<br>
+
+<button class="col-md-3 col-6 div2"onclick="Value('%')"><h4>%</h4></button>
+<button class="col-md-3 col-6 div2"onclick="Value('0')"><h4>0</h4></button> 
+<button class="col-md-3 col-6 div2"onclick="Value('.')"><h4>.</h4></button>
+<button class="col-md-3 col-6 div2"onclick="calculateResult()"><h4>=</h4></button>
+
+
+	
+	</div>
+
+</center>
+<script type="text/javascript">
+	function Value(value){
+		document.getElementById('div1').value += value;
+	}
+	function clearDisplay(){
+		document.getElementById('div1').value =" ";
+	}
+	function calculateResult(){
+		try{
+			document.getElementById('div1').value=eval(document.getElementById('div1').value);
+		}
+		catch{
+			document.getElementById('div1').value ="error";
+		}
+	}
+</script>
+</body>
+</html>

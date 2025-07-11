@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		div
+		{
+		height: 100px;width: 100px; border: 1px solid;
+
+		}
+		.div-red
+		{
+			background: red;
+		}
+		.div-yellow
+		{
+			background: yellow;
+		}
+		.div-circle
+		{
+			border-radius: 50%;
+		}
+	</style>
+	<script type="text/javascript">
+		let demo = ()=>{
+			//let mainclass1 = document.querySelector(' .mainclass1')
+
+			//let mainclass1 = document.getElementById('mainclass1')
+			 //console.log(mainclass1)
+			 mydiv.classList.add('div-red')
+		    mydiv.classList.add('div-circle')			
+			mydiv.classList.replace('div-red','div-yellow')
+				mydiv.classList.remove('div-red')
+				mydiv.classList.remove('div-circle')
+
+		}
+	</script>
+</head>
+<body>
+
+<div id="mydiv" class="div-red div-circle" ></div>
+
+
+	<button onclick="demo()">Click</button>
+
+
+</body>
+</html>

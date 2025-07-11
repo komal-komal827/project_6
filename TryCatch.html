@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	
+	async function show()
+	{
+		try
+		{
+			let res = await fetch('https://dummyjson.com/produc')
+			let data = await res.json()
+			console.log(data)
+			let data2= data.products
+
+			console.log(data2)
+			// throw new Error("Error while fetch data")
+		}
+		catch(error)
+		{
+			console.log("Error")
+			// console.warn(error)
+			
+		}
+		
+
+
+	}
+
+
+show()
+
+</script>

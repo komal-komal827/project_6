@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		img
+		{
+			height: 100px;
+			width: 100px;
+		}
+	</style>
+	<script type="text/javascript">
+
+
+
+
+
+		
+		function incr()
+		{
+
+			let myImg = document.getElementById('myimg');
+			let w = myImg.width;
+			let h = myImg.height;
+
+			h += 20
+			w += 20
+
+			myImg.style.height = h+"px"
+			myImg.style.width  = w+"px"
+			myImg.style.transition = "2s"
+		}
+		function decr()
+		{
+
+			let myImg = document.getElementById('myimg');
+			let w = myImg.width;
+			let h = myImg.height;
+
+			h -= 20
+			w -= 20
+
+			myImg.style.height = h+"px"
+			myImg.style.width  = w+"px"
+			myImg.style.transition = "2s"
+		}
+	</script>
+</head>
+<body>
+
+<center>
+
+
+<img src="myimg.jpg" id="myimg">
+<br>
+<button onclick="incr()">+</button>
+<button onclick="decr()">-</button>
+
+
+
+
+
+</center>
+
+</body>
+</html>

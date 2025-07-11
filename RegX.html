@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<script type="text/javascript">
+		/*
+		const passwordPattern = /^[a-z]*$/;
+
+const password = "234234";
+
+if (passwordPattern.test(password)) {
+    console.log("Valid password.");
+} else {
+    console.log("Invalid password.");
+}
+*/
+		function check()
+		{
+			/*
+			let pattern = /^[789]\d{9}$/;
+
+			let mobile = document.getElementById('txt_phone').value;
+
+			if(pattern.test(mobile))
+			{
+				document.getElementById('msg').innerText = 'Valid mobile number'
+			}
+			else
+			{
+					document.getElementById('msg').innerText = 'Invalid mobile number'
+			}
+			*/
+
+			let pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,20}$/;
+
+
+			let pass = document.getElementById('txt_password').value
+
+			if(pattern.test(pass))
+			{
+				document.getElementById('msg').innerText= 'Valid password'
+			}
+			else
+			{
+				document.getElementById('msg').innerText= 'InValid password'
+			}
+		}
+
+	</script>
+</head>
+<body>
+
+
+<!-- 
+<input type="phone" name="" id="txt_phone" maxlength="10">
+<span id="msg"></span>
+<br><br>
+<button onclick="check()">Check</button>
+ -->
+
+
+<input type="password" name="" id="txt_password">
+<span id="msg"></span>
+<br><br>
+<button onclick="check()">Check</button>
+
+
+
+</body>
+</html>
